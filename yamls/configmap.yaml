@@ -1,0 +1,8 @@
+apiVersion: v1
+kind:ConfigMap
+metadata:
+  name:  appvars-cm
+data:
+  apploglevel:  info
+  nginx-conf: "user nginx;
+  worker-process: 2;"
