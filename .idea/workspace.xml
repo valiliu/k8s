@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83594eb0-2049-4729-93cb-8bd9332d4fe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yamls/dp-rolling-update.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pvc-1.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/replicaSet.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/service-headless.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/sts-nginx.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pod-with-pvc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pv-bad.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pvc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/sts-pvc-claim.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/svc-4-mysql.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yamls/pvc-1.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

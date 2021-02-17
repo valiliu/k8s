@@ -1,0 +1,16 @@
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+# 表示我想要的 Volume 大小至少是 1 GiB；
+# accessModes: ReadWriteOnce，表示这个 Volume 的挂载方式是可读写，
+# 并且只能被挂载在一个节点上而非被多个节点共享。
+# 具体可参考k8s官方文档 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
