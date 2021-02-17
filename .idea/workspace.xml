@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83594eb0-2049-4729-93cb-8bd9332d4fe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yamls/pod-with-pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pv-bad.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/sts-pvc-claim.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/svc-4-mysql.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/cronjob.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/daemonset-elasticsearch.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/job.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pod-affinity.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pod-toleration.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/storageclass-by-rook.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yamls/pvc-1.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +76,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613548747793">
+    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613578335536">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1613548747793" />
+    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1613578335536" />
   </component>
 </project>
