@@ -20,17 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83594eb0-2049-4729-93cb-8bd9332d4fe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/k8s.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/dp-nginx.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pod-1-container-ng.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pod-mount-secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pod-preset.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/pod-probe.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamls/secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s组件介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/k8s组件介绍.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yamls/configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/yamls/configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/dp-rolling-update.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/pvc-1.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/replicaSet.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/service-headless.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yamls/sts-nginx.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,5 +73,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613548747793">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="271" y="102" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1613548747793" />
   </component>
 </project>
