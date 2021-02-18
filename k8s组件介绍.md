@@ -39,3 +39,16 @@ CSI（Container Storage Interface）
 像这样使用一种 API 对象（Deployment）管理另一种 API 对象（Pod）的方法，在 Kubernetes 中，叫作“控制器”模式（controller pattern）
 
 “Namespace 做隔离，Cgroups 做限制，rootfs 做文件系统”
+
+
+apiVersion: batch/v2alpha1
+kind: CronJob
+...
+CronJob就是API对象的资源类型（Resource）
+batch就是它的组（Group）
+v2alpha1就是它的版本（Version）
+
+CRD 的全称是 Custom Resource Definition。
+顾名思义，它指的就是，允许用户在 Kubernetes 中添加一个跟 Pod、Node 
+类似的、新的 API 资源类型，即：自定义 API 资源。
+
