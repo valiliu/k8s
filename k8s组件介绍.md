@@ -52,3 +52,7 @@ CRD 的全称是 Custom Resource Definition。
 顾名思义，它指的就是，允许用户在 Kubernetes 中添加一个跟 Pod、Node 
 类似的、新的 API 资源类型，即：自定义 API 资源。
 
+Kubernetes 里所有的 Pod 都会以 Volume 的方式自动挂载 Kubernetes 的默认 ServiceAccount。
+所以，这个控制器就会直接使用默认 ServiceAccount 数据卷里的授权信息，来访问 APIServer。
+
+
