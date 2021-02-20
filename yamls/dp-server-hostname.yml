@@ -15,7 +15,9 @@ spec:
     spec:
       containers:
         - name: hostnames
-          image: k8s.gcr.io/serve_hostname
+#          image: k8s.gcr.io/serve_hostname
+          # 上面这种地址被墙了，一般都访问不了
+          image: docker.io/mirrorgooglecontainers/serve_hostname:latest
           ports:
             - containerPort: 9376
               protocol: TCP
