@@ -8,8 +8,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8080
-      targetPort: 80
+    - port: 8080  # 针对的是clusterIP
+      targetPort: 80 # 针对的是pod里的容器拉起的端口
+#      nodePort: 888888 # 针对的是宿主机，此参数一般不设置，让其自动生成
       protocol: TCP
       name: http
     - port: 443
@@ -17,3 +18,22 @@ spec:
       name: https
   selector:
     run: my-nginx
+
+# tips
+# 1、如何通过service域名访问
+# 登入任何一个pod，执行
+#  1.1 curl my-nginx.local:8081
+#  1.2 curl 10.1.60.60:8081
+# 2、在任何一台宿主机上（包括master） 执行：
+# 2.1 curl 192.168.1.12:888888 (192.168.1.12可以是任何一台宿主机IP）
+# 2.2 curl 10.1.60.60:8081 (10.1.60.60是service的 clusterIP)
+# 2.3 curl my-nginx.local:8081 (这里访问会报错，因为脱离集群后，svc的域名就失效了)
+#     解决办法： 在宿主机上配置svc的域名解析
+#     进入任何一个pod  cat /etc/resolv.conf
+#     可以看到以下两行：
+#      nameserver 10.1.0.10
+#      search default.svc.cluster.local svc.cluster.local cluster.local
+#     修改宿主机上的dns解析：
+#     vim /etc/resolv.conf
+#     将上面两行的内容粘贴进去然后保存并退出
+#     再执行  curl my-nginx.local:8081 就可以正常访问了
