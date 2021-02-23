@@ -22,7 +22,8 @@ spec:
 # tips
 # 1、如何通过service域名访问
 # 登入任何一个pod，执行
-#  1.1 curl my-nginx.local:8081
+#  1.1 curl my-nginx.local:8081(如果namespace是非default，则需要使用svc的全名，如下面这条)
+#  或者 curl my-nginx.default.svc.cluster.local:8081
 #  1.2 curl 10.1.60.60:8081
 # 2、在任何一台宿主机上（包括master） 执行：
 # 2.1 curl 192.168.1.12:888888 (192.168.1.12可以是任何一台宿主机IP）
