@@ -5,7 +5,8 @@ metadata:
   name: pv-claim
 spec:
   accessModes:
-    - ReadWriteOnce
+#    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
