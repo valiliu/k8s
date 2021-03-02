@@ -1,0 +1,26 @@
+1、registry.aliyuncs.com
+2、hub-mirror.c.163.com
+3、docker.mirrors.ustc.edu.cn/library/
+4、registry.docker-cn.com
+5、f1361db2.m.daocloud.io
+6、docker.mirrors.ustc.edu.cn
+
+配置到 /etc/docker/daemon.json
+    例如：
+    {
+        "registry-mirrors": [
+            "https://1nj0zren.mirror.aliyuncs.com",
+            "https://docker.mirrors.ustc.edu.cn",
+            "http://f1361db2.m.daocloud.io",
+            "https://registry.docker-cn.com"
+        ],
+        "insecure-registries": ["192.168.1.14"]
+    }
+
+全地址使用举例：
+    registry.docker-cn.com/istio/examples-bookinfo-productpage-v1:1.16.2
+    f1361db2.m.daocloud.io/istio/examples-bookinfo-productpage-v1:1.16.2
+    docker.mirrors.ustc.edu.cn/istio/examples-bookinfo-productpage-v1:1.16.2
+    hub-mirror.c.163.com/istio/examples-bookinfo-productpage-v1:1.16.2
+    registry.aliyuncs.com/google_containers/nginx-ingress-controller:0.30.0
+

@@ -3,8 +3,8 @@
 2、配置vendor
     goget -u github.com/kardianos/govendor 
 
-​	govendor init
+    govendor init
 
-​	go mod vendor 
+    go mod vendor 
 
 3、

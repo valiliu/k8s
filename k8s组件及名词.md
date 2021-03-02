@@ -56,3 +56,8 @@ Kubernetes 里所有的 Pod 都会以 Volume 的方式自动挂载 Kubernetes �
 所以，这个控制器就会直接使用默认 ServiceAccount 数据卷里的授权信息，来访问 APIServer。
 
 
+
+HPA  
+    Horizontal Pod Autoscaling仅仅适用于Deploment和ReplicaSet，在V1版本在红仅支持根据Pod的CPU利用率扩缩容，在vlalpha版本汇总，支持根据内存和用户自定义的metric扩缩容。
+
+StatefulSet 是为了解决有装填服务的问题。（Deployment和ReplicaSet是为无状态服务而设计。）	场景包括：

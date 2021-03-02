@@ -222,7 +222,9 @@ spec:
         kubernetes.io/os: linux
       containers:
         - name: nginx-ingress-controller
-          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0
+#          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0
+#          这里最好用阿里云的镜像源,上面一行的镜像源贼慢。。
+          image: registry.aliyuncs.com/google_containers/nginx-ingress-controller:0.30.0
           args:
             - /nginx-ingress-controller
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
