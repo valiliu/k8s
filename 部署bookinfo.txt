@@ -1,0 +1,77 @@
+部署bookinfo
+	
+
+非自动注入执行启动bookinfo:
+kubectl apply -f <(istioctl kube-inject -f  /home/vali/istio-1.9.0/samples/bookinfo/platform/kube/bookinfo.yaml)
+
+kubectl get svc istio-ingressgateway -n istio-system
+如果 EXTERNAL-IP 有值（IP 地址或主机名），则说明您的环境具有可用于 Ingress 网关的外部负载均衡器。
+
+由于使测试环境用的本地k8s集群肯定不支持，本次使用nodeport 方式访问网关
+
+设置 istio-ingressgateway service 为 node port
+
+修改 service type：
+kubectl patch service istio-ingressgateway -n istio-system -p '{"spec":{"type":"NodePort"}}'  
+
+
+kubectl get svc istio-ingressgateway -n istio-system
+NAME                   TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)                                                                      AGE
+istio-ingressgateway   NodePort   10.1.153.208   <none>        15021:31881/TCP,80:31290/TCP,443:30963/TCP,15443:31263/TCP,31400:30382/TCP   5d15h
+
+安装
+cd /home/vali/istio-1.9.0
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+
+kubectl get gateway --all-namespaces
+NAMESPACE   NAME               AGE
+default     bookinfo-gateway   64s
+
+设置INGRESS_PORT
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+
+确认port
+[root@k8s-master istio-1.9.0]# echo $INGRESS_PORT
+31290
+
+应用缺省目标规则
+kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
+
+清除bookinfo的所有相关资源及配置
+	./samples/bookinfo/platform/kube/cleanup.sh
+	
+	验证是否清理成功：
+	kubectl get virtualservices   #-- there should be no virtual services
+	kubectl get destinationrules  #-- there should be no destination rules
+	kubectl get gateway           #-- there should be no gateway
+	kubectl get pods              #-- the Bookinfo pods should be deleted
+
+访问：
+	http://192.168.1.11:31290/productpage
+
+参考：
+https://blog.csdn.net/thethefighter/article/details/106814447
+https://cnblogs.com/caozhiyuan/p/11621732.html
+https://istio.io/latest/docs/tasks/
+https://istio.io/latest/docs/examples/bookinfo/
+
+
+
+
+给 default 命名空间打上标签 istio-injection=enabled:
+	kubectl label namespace default istio-injection=enabled
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl get pods
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
+export INGRESS_HOST=<k8s-node ip> 即 export INGRESS_HOST=192.168.1.11
+192.168.1.11是我的其中一个work节点IP
+export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+
+env|grep GATEWAY_URL可以获取到端口是:
+31290
+
+访问：
+http://192.168.1.11:31290/productpage
+
