@@ -24,3 +24,4 @@
     hub-mirror.c.163.com/istio/examples-bookinfo-productpage-v1:1.16.2
     registry.aliyuncs.com/google_containers/nginx-ingress-controller:0.30.0
 
+hub-mirror.c.163.com/nginx-plus-ingress:edge
