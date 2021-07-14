@@ -1,0 +1,21 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-hpa
+  namespace: my-ns
+spec:
+  maxReplicas: 3
+  metrics:
+    - resource:
+        name: memory
+        targetAverageUtilization: 70
+      type: Resource
+    - resource:
+        name: cpu
+        targetAverageUtilization: 70
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: deployment
+    name: my-deployment
